@@ -88,19 +88,19 @@ nav li.user-icon img {
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
+                    <a class="nav-link" href="services.php">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link  active" href="#">Apply for a Loan</a>
+                  <a class="nav-link  active" href="loan_application.php">Apply for a Loan</a>
               </li>
                 <li class="nav-item">
                     <a class="nav-link mr-3" href="profile.php">Profile</a>

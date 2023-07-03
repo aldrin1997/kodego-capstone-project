@@ -120,19 +120,19 @@ nav li.user-icon img {
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
+                    <a class="nav-link" href="services.php">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="loan_application.php">Apply for a Loan</a>
               </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-3  active" href="#">Profile</a>
+                    <a class="nav-link mr-3  active" href="profile.php">Profile</a>
                 </li>
             </ul>
         </div>
@@ -156,16 +156,16 @@ nav li.user-icon img {
         
         <div class="footer-column">
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.php">Home</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">About Us</a>
+            <a class="nav-link" href="about.php">About Us</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Privacy Policy</a>
+            <a class="nav-link" href="privacy.php">Privacy Policy</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Contact Us</a>
+            <a class="nav-link" href="contact.php">Contact Us</a>
           </div>
 
         </div>

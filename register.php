@@ -86,21 +86,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-success" href="index.html">Home</a>
+            <a class="nav-link text-success" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
+            <a class="nav-link" href="services.php">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.php">Contact</a>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link btn btn-success" href="login.html">Login</a>
+            <a class="nav-link btn btn-success" href="login.php">Login</a>
           </li>
         </ul>
       </div>
@@ -164,16 +164,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
           <div class="footer-column">
             <div class="footer-links">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
             </div>
             <div class="footer-links">
-              <a class="nav-link" href="index.html">About Us</a>
+              <a class="nav-link" href="about.php">About Us</a>
             </div>
             <div class="footer-links">
-              <a class="nav-link" href="index.html">Privacy Policy</a>
+              <a class="nav-link" href="privacy.php">Privacy Policy</a>
             </div>
             <div class="footer-links">
-              <a class="nav-link" href="index.html">Contact Us</a>
+              <a class="nav-link" href="contact.php">Contact Us</a>
             </div>
 
           </div>
