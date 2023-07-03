@@ -143,35 +143,35 @@ if (isset($_SESSION['username'])) {
         <img src="image/logo.png" alt="Logo" class="img-fluid">
       </div>
       <div class="footer-columns">
-        <div class="footer-column">
+        <div class="footer-column fw-medium">
           <h5>MAC Lending Inc.</h5>
-          <p>Unit 305 3/F 6276 National Life Insurance Bldg. San Lorenzo, Ayala Ave. Makati City</p>
+          <p>Unit 305 3/F 6276<br>National Life Insurance Bldg.<br>San Lorenzo, Ayala Ave. Makati City</p>
         </div>
         
         <div class="footer-column">
           <div class="footer-links">
-            <a class="nav-link" href="index.php">Home</a>
+            <a class="nav-link fw-medium" href="index.php">Home</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="about.php">About Us</a>
+            <a class="nav-link fw-medium" href="about.php">About Us</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="privacy.php">Privacy Policy</a>
+            <a class="nav-link fw-medium" href="privacy.php">Privacy Policy</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="contact.php">Contact Us</a>
+            <a class="nav-link fw-medium" href="contact.php">Contact Us</a>
           </div>
 
         </div>
         <div class="footer-column">
           <div class="footer-links">
-            <a class="nav-link" href="personal.php">Personal Loan</a>
+            <a class="nav-link fw-medium" href="personal.php">Personal Loan</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="salary.php">Salary Loan</a>
+            <a class="nav-link fw-medium" href="salary.php">Salary Loan</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="business.php">Small Business Loan</a>
+            <a class="nav-link fw-medium" href="business.php">Small Business Loan</a>
           </div>
         </div>
         
@@ -179,19 +179,19 @@ if (isset($_SESSION['username'])) {
           <div class="social-icons">
             <a href="https://www.facebook.com" target="_blank">
               <i class="fab fa-facebook"></i>
-              <span>Facebook</span>
+              <span class="fw-medium">Facebook</span>
             </a>
           </div>
           <div class="social-icons">
             <a href="https://www.twitter.com" target="_blank">
               <i class="fab fa-twitter"></i>
-              <span>Twitter</span>
+              <span class="fw-medium">Twitter</span>
             </a>
           </div>
           <div class="social-icons">
             <a href="https://www.instagram.com" target="_blank">
               <i class="fab fa-instagram"></i>
-              <span>Instagram</span>
+              <span class="fw-medium">Instagram</span>
             </a>
           </div>
         
