@@ -74,13 +74,15 @@ nav li.user-icon img {
     height: 30px;
     border-radius: 50%;
 }
+
+
 </style>
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <img src="image/logo.png" width="150px" class="navbar-brand p-2" href="index.html">
+        <img src="image/logo.png" width="400px" class="navbar-brand p-2" href="index.html">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">MAC LENDING INC.</span>
@@ -381,15 +383,80 @@ nav li.user-icon img {
                        <span class="fw-bold">Declaration:</span> I hereby declare that the information provided above is true, complete, 
                        and accurate to the best of my knowledge. I understand that any false or misleading information may result in the 
                        rejection of my loan application. I authorize the lending institution to verify the information provided and obtain 
-                       credit reports, as deemed necessary, to evaluate my loan application.<a href="#">Terms & Privacy</a>.
+                       credit reports, as deemed necessary, to evaluate my loan application.
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">SUBMIT</button>
             </form>
         </div>
     </div>
+    <br>
+    <br>
+    <footer class="footer">
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-logo">
+        <img src="image/logo.png" alt="Logo" class="img-fluid">
+      </div>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h5>MAC Lending Inc.</h5>
+          <p>Unit 305 3/F 6276 National Life Insurance Bldg. San Lorenzo, Ayala Ave. Makati City</p>
+        </div>
+        
+        <div class="footer-column">
+          <div class="footer-links">
+            <a class="nav-link" href="index.php">Home</a>
+          </div>
+          <div class="footer-links">
+            <a class="nav-link" href="about.php">About Us</a>
+          </div>
+          <div class="footer-links">
+            <a class="nav-link" href="privacy.php">Privacy Policy</a>
+          </div>
+          <div class="footer-links">
+            <a class="nav-link" href="contact.php">Contact Us</a>
+          </div>
 
+        </div>
+        <div class="footer-column">
+          <div class="footer-links">
+            <a class="nav-link" href="index.html">Personal Loan</a>
+          </div>
+          <div class="footer-links">
+            <a class="nav-link" href="index.html">Salary Loan</a>
+          </div>
+          <div class="footer-links">
+            <a class="nav-link" href="index.html">Small Business Loan</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+              <i class="fab fa-facebook"></i>
+              <span>Facebook</span>
+            </a>
+          </div>
+          <div class="social-icons">
+            <a href="https://www.twitter.com" target="_blank">
+              <i class="fab fa-twitter"></i>
+              <span>Twitter</span>
+            </a>
+          </div>
+          <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
+
 <script>
 
 </script>

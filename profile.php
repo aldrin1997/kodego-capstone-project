@@ -109,7 +109,7 @@ nav li.user-icon img {
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <img src="image/logo.png" width="150px" class="navbar-brand p-2" href="index.html">
+        <img src="image/logo.png" width="400px" class="navbar-brand p-2" href="index.html">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">MAC LENDING INC.</span>

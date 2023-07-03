@@ -89,7 +89,7 @@ nav li.user-icon img {
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <img src="image/logo.png" width="150px" class="navbar-brand p-2" href="index.html">
+        <img src="image/logo.png" width="400px" class="navbar-brand p-2" href="index.html">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">MAC LENDING INC.</span>
@@ -127,7 +127,7 @@ nav li.user-icon img {
           <h1>Small Business</h1>
           <h1>Loan for daily</h1>
           <h1>Expenses.</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti maiores eius temporibus asperiores autem est fugit quaerat debitis voluptatem ratione, eaque ex ut quas quod? Aliquam id sunt non.</p>
+          <p>At MAC Lending, our vision is to provide fast approved loans for all types of individuals who are in need of quick financial assistance. We understand that sometimes life throws unexpected challenges our way, and having access to immediate funds can make a significant difference.</p>
           <button class="btn btn-success btn-lg mt-4">Apply for Loan</button>
         </div>
         <div class="col-lg-6">
@@ -146,8 +146,7 @@ nav li.user-icon img {
         <h5 class="text-success">About Our Company</h5>
         <h3>Building a Brighter financial</h3>
         <h3>Future & Good Support.</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti maiores eius temporibus asperiores autem est fugit quaerat debitis voluptatem ratione, eaque ex ut quas quod? Aliquam id sunt non.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti maiores eius temporibus asperiores autem est fugit quaerat debitis voluptatem ratione, eaque ex ut quas quod? Aliquam id sunt non.</p>
+        <p>Our mission is to make the borrowing process as seamless and efficient as possible. We believe that everyone deserves equal opportunities when it comes to accessing financial support. Therefore, regardless of your credit history or financial background, we strive to offer fast loan approvals to all eligible applicants.</p>
         <button class="btn btn-success btn-lg mt-4">Apply for Loan</button>
       </div>
       <div class="col-lg-6">
@@ -166,7 +165,7 @@ nav li.user-icon img {
         <h5 class="text-success">Services that we are providing</h5>
         <h3>Building a Brighter financial</h3>
         <h3>Future & Good Support.</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti maiores eius temporibus asperiores autem est fugit quaerat debitis voluptatem ratione, eaque ex ut quas quod? Aliquam id sunt non.</p>
+        <p>With our streamlined application process, you can apply for a loan with ease. Simply visit our website or reach out to our dedicated customer service team, and we'll guide you through the necessary steps. We have simplified the documentation requirements to expedite the approval process, allowing you to receive the funds you need quickly.</p>
         <button class="btn btn-success btn-lg mt-4">Apply for Loan</button>
       </div>
       <div class="col-lg-6">
