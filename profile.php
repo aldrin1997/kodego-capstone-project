@@ -240,6 +240,7 @@ $user = $query->fetch(PDO::FETCH_ASSOC);
                 <h2>User Profile</h2>
                 <p class="fw-medium">Username: <?php echo $user['username']; ?></p>
                 <p class="fw-medium">Email: <?php echo $user['email']; ?></p>
+                <p class="fw-medium"><a href="logout.php">Logout</a></p>
             </div>
             <div class="card-container mb-3">
                 <div class="card">
@@ -258,7 +259,7 @@ $user = $query->fetch(PDO::FETCH_ASSOC);
                     <button class="btn btn-success btn-sm">Pay Loan</button>
                 </div>
             </div>
-            <a href="logout.php">Logout</a>
+            
         </div>
     </div>
 

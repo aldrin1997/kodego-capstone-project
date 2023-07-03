@@ -11,13 +11,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    .agent-circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+  }
+  </style>
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <div class="navbar-brand">
-        <img src="image/logo.png" width="400px" class="logo-image" alt="Logo">
+        <img src="image/logo.png" width="300px" class="logo-image" alt="Logo">
         <span class="logo-text">MAC Lending Inc.</span>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,10 +34,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-success" href="home.php">Home</a>
+            <a class="nav-link" href="home.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.php">About</a>
+            <a class="nav-link text-success" href="about.php">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="services.php">Services</a>
@@ -47,22 +55,62 @@
     </div>
   </nav>
 
+  <div class="container mt-5 mb-5">
+        <h1 class="text-center fw-bold display-5">About Us</h1>
+        <p class="mt-3 text-center fs-6 fw-medium">
+          At <b>MAC Lending</b>, we are dedicated to providing reliable and accessible financial <br>solutions to individuals 
+          and businesses. With a strong commitment to transparency, integrity, and customer satisfaction, <br>we strive to 
+          empower our clients with the financial resources they need to achieve their goals and dreams.
+        </p>
+
+        <div class="row mt-5">
+
+            <div class="col-md-4 mb-5 mt-2">
+                <div class="text-center"> <!-- Add text-center class here -->
+                    <img src="image/AC.png" alt="Agent 2" class="agent-circle">
+                    <h3 class="mt-3 fs-2">Aldrin Cardeño</h3>
+                    <p class="fs-6 text-center fw-medium">Admin</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-5 mt-2">
+                <div class="text-center"> <!-- Add text-center class here -->
+                    <img src="image/CM.jpg" alt="Agent 3" class="agent-circle">
+                    <h3 class="mt-3 fs-2">Catherine Monsales</h3>
+                    <p class="fs-6 text-center fw-medium">Admin</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-5 mt-2">
+                <div class="text-center"> <!-- Add text-center class here -->
+                    <img src="image/MP.png" alt="Agent 4" class="agent-circle">
+                    <h3 class="mt-3 fs-2">Melvin Pelegrina</h3>
+                    <p class="fs-6 text-center fw-medium">Admin</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
   <section class="about-section">
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
-          <h5 class="text-success">About Our Company</h5>
-          <h3>Building a Brighter financial</h3>
-          <h3>Future & Good Support.</h3>
-          <p>Our mission is to make the borrowing process as seamless and efficient as possible. We believe that everyone deserves equal opportunities when it comes to accessing financial support. Therefore, regardless of your credit history or financial background, we strive to offer fast loan approvals to all eligible applicants.</p>
+          <h1 class="text-success fw-bold text-center">Mission</h1>
+          <h4 class="text-center">Building a Brighter financial</h4>
+          <h4 class="text-center">Future & Good Support.</h4>
+          <p>Our mission is to be the trusted partner for individuals and businesses seeking financial assistance. We aim to simplify the 
+            lending process, offering a wide range of loan options and personalized solutions tailored to our customers' unique needs. We 
+            are dedicated to fostering financial well-being and helping our clients make informed decisions about their borrowing needs.</p>
           
-          <button class="btn btn-success btn-lg mt-4">Apply for Loan</button>
+          <button class="btn btn-success btn-sm mt-4">Apply for Loan</button>
         </div>
         <div class="col-lg-6">
-          <img src="image/image2.png" alt="lending money" class="img-fluid">
+          <img src="image/image11.jpg" alt="lending money" class="img-fluid rounded">
         </div>
       </div>
     </div>
+    
   </section>
   <br>
   <br>
