@@ -9,96 +9,104 @@
   <title>Admin | Loan Management System</title>
 
 </head>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-}
-	  .sidebar {
-			height: 100%;
-			width: 180px;
-			position: fixed;
-			top: 0;
-			left: 0;
-			background-color: #f8fcf3;
-			overflow-x: hidden;
-			padding-top: 20px;
-		}
-
-		.sidebar a {
-			display: block;
-			color: #000;
-			padding: 16px;
-			text-decoration: none;
-			font-size: 18px;
-		}
-
-		.sidebar a:hover {
-		
-			color: #8ee69c;
-		}
-		
-
-		.active {
-			background-color: #f8fcf3;
-			color: #333;
-		}
-		.content {
-			background-color: #f8fcf3;
-			margin-left: 200px;
+	<style>
+			body {
+			font-family: Arial, sans-serif;
+			margin: 0;
 			padding: 20px;
-		}
-</style>
+			}
+		.sidebar {
+				height: 100%;
+				width: 180px;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background-color: #f8fcf3;
+				overflow-x: hidden;
+				padding-top: 20px;
+			}
+
+			.sidebar a {
+				display: block;
+				color: #000;
+				padding: 16px;
+				text-decoration: none;
+				font-size: 18px;
+			}
+
+			.sidebar a:hover {
+			
+				color: #8ee69c;
+			}
+			
+
+			.active {
+				background-color: #f8fcf3;
+				color: #333;
+			}
+			.content {
+				background-color: #f8fcf3;
+				margin-left: 200px;
+				padding: 20px;
+				width: auto;
+			}
+	</style>
 
 <body>
-	<div class="sidebar">
-		<img src="images/MAC LENDING.png" width="160px" class="navbar p-2">
-		<a href="admin.php"><i class="fa fa-tachometer"></i> Dashboard</a>
-		<a href="loanlist.php"><i class="fa fa-credit-card"></i> Loan List</a>
-		<a href="#" class="active"><i class="fa fa-money-check"></i> Payments</a>
-		<a href="loanplans.php"><i class="fa-solid fa-coins"></i> Loan Plans</a>
-		<a href="loantypes.php"><i class="fa fa-chart-line"></i> Loan types</a>
-        <a href="borrowers.php"><i class="fa-solid fa-hand-holding-dollar"></i> Borrowers</a>
-		<a href="users.php"><i class="fa-solid fa-users"></i> Users</a>
-	</div>
-</nav>
-<div class="content">
-    <div class="col-lg-12">
-		<div class="card">
-			<div class="card-header">
-				<large class="card-title">
-					<b>Payment List</b>
+	<nav>
+		<div class="sidebar">
+			<img src="image/logo.png" width="200px" alt="logo" class="navbar">
+			<a href="admin.php"><i class="fa fa-tachometer"></i> Dashboard</a>
+			<a href="loanlist.php"><i class="fa fa-credit-card"></i> Loan List</a>
+			<a href="payments.php" class="active fw-medium"><i class="fa fa-money-check"></i> Payments</a>
+			<a href="loanplans.php"><i class="fa-solid fa-coins"></i> Loan Plans</a>
+			<a href="loantypes.php"><i class="fa fa-chart-line"></i> Loan types</a>
+			<a href="borrowers.php"><i class="fa-solid fa-hand-holding-dollar"></i> Borrowers</a>
+			<a href="users.php"><i class="fa-solid fa-users"></i> Users</a>
+			<br>
+			<br>
+			<a href="logout.php" class="logout-btn"><i class="fa-sharp fa-solid fa-power-off"></i> Logout</a>
+		</div>
+	</nav>
+	<div class="content">
+		<div class="col-lg-12">
+			<div class="card">
+				<div class="card-header">
+					<large class="card-title">
+						<b>Payment List</b>
+						
+					</large>
 					
-				</large>
-				
+				</div>
+				<div class="card-body">
+					<table class="table table-bordered ml-auto" id="loan-list">
+						<colgroup>
+							<col width="10%">
+							<col width="25%">
+							<col width="25%">
+							<col width="20%">
+							<col width="10%">
+							<col width="10%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th class="text-center">#</th>
+								<th class="text-center">Loan Reference No</th>
+								<th class="text-center">Payee</th>
+								<th class="text-center">Amount</th>
+								<th class="text-center">Penalty</th>
+								<th class="text-center">Action</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
 			</div>
-			<div class="card-body">
-				<table class="table table-bordered" id="loan-list">
-					<colgroup>
-						<col width="10%">
-						<col width="25%">
-						<col width="25%">
-						<col width="20%">
-						<col width="10%">
-						<col width="10%">
-					</colgroup>
-					<thead>
-						<tr>
-							<th class="text-center">#</th>
-							<th class="text-center">Loan Reference No</th>
-							<th class="text-center">Payee</th>
-							<th class="text-center">Amount</th>
-							<th class="text-center">Penalty</th>
-							<th class="text-center">Action</th>
-						</tr>
-					</thead>
-					<tbody>
-</div>
+		</div>
+	</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+	crossorigin="anonymous"></script>
 </body>	
 
 </html>
