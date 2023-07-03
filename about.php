@@ -99,11 +99,11 @@
           <h1 class="text-success fw-bold text-center">Mission</h1>
           <h4 class="text-center">Building a Brighter financial</h4>
           <h4 class="text-center">Future & Good Support.</h4>
-          <p>Our mission is to be the trusted partner for individuals and businesses seeking financial assistance. We aim to simplify the 
+          <p class="fw-medium">Our mission is to be the trusted partner for individuals and businesses seeking financial assistance. We aim to simplify the 
             lending process, offering a wide range of loan options and personalized solutions tailored to our customers' unique needs. We 
             are dedicated to fostering financial well-being and helping our clients make informed decisions about their borrowing needs.</p>
           
-          <button class="btn btn-success btn-sm mt-4">Apply for Loan</button>
+          
         </div>
         <div class="col-lg-6">
           <img src="image/image11.jpg" alt="lending money" class="img-fluid rounded">

@@ -66,7 +66,7 @@ if (isset($_SESSION['username'])) {
           <h1>Loan for daily</h1>
           <h1>Expenses.</h1>
           <p>At MAC Lending, our vision is to provide fast approved loans for all types of individuals who are in need of quick financial assistance. We understand that sometimes life throws unexpected challenges our way, and having access to immediate funds can make a significant difference.</p>
-          <button class="btn btn-success btn-sm mt-4">Apply for Loan</button>
+          
         </div>
         <div class="col-lg-6">
           <img src="image/image1.png" alt="lending money" class="img-fluid">
@@ -86,7 +86,7 @@ if (isset($_SESSION['username'])) {
         <h3>Future & Good Support.</h3>
         <p>Our mission is to make the borrowing process as seamless and efficient as possible. We believe that everyone deserves equal opportunities when it comes to accessing financial support. Therefore, regardless of your credit history or financial background, we strive to offer fast loan approvals to all eligible applicants.</p>
         
-        <button class="btn btn-success btn-sm mt-4">Apply for Loan</button>
+        
       </div>
       <div class="col-lg-6">
         <img src="image/image2.png" alt="lending money" class="img-fluid">
@@ -105,7 +105,7 @@ if (isset($_SESSION['username'])) {
         <h3>Building a Brighter financial</h3>
         <h3>Future & Good Support.</h3>
         <p>With our streamlined application process, you can apply for a loan with ease. Simply visit our website or reach out to our dedicated customer service team, and we'll guide you through the necessary steps. We have simplified the documentation requirements to expedite the approval process, allowing you to receive the funds you need quickly.</p>
-        <button class="btn btn-success btn-sm mt-4">Apply for Loan</button>
+        
       </div>
       <div class="col-lg-6">
         <img src="image/image3.png" alt="lending money" class="img-fluid">
@@ -130,7 +130,7 @@ if (isset($_SESSION['username'])) {
   <div class="card">
     <img src="image/image6.png" alt="Small Business Loan" class="img-fluid">
     <h5>Small Business Loan</h5>
-    <button class="btn btn-success btn-sm">Apply Now!</button>
+    <button type="btn" href="loan_application.php" class="btn btn-success btn-sm">Apply Now!</button>
   </div>
 </div>
 <br>

@@ -46,43 +46,66 @@
       </div>
     </div>
   </nav>
+  <div class="container mt-5 mb-5">
+    <h1 class="text-center fw-bold display-5">Our Services</h1>
+    <p class="mt-3 text-center fs-6 fw-medium">
+      Mac Lending offers a comprehensive range of lending services to meet a variety of financial requirements. <br>
+      Whether you're looking to fund a personal project, purchase a home, expand your business, or consolidate debt,<br> 
+      we have the solutions to suit your needs.
+    </p>
+  </div>
 
+  
   <section class="services-section">
     <div class="container">
-      <div class="row">
+      <div class="row mb-5">
         <div class="col-lg-6">
-          <h5 class="text-success">Services that we are providing</h5>
-          <h3>Building a Brighter financial</h3>
-          <h3>Future & Good Support.</h3>
-          <p>With our streamlined application process, you can apply for a loan with ease. Simply visit our website or reach out to our dedicated customer service team, and we'll guide you through the necessary steps. We have simplified the documentation requirements to expedite the approval process, allowing you to receive the funds you need quickly.</p>
-          <button class="btn btn-success btn-lg mt-4">Apply for Loan</button>
+          <img src="image/image13.jpg" width="450px" alt="lending money" class="img-fluid rounded">
         </div>
         <div class="col-lg-6">
-          <img src="image/image3.png" alt="lending money" class="img-fluid">
+          <h1 class="text-success fw-medium">Our Services Include:</h1>
+          <br>
+          <ul class="fw-medium" style="font-size: 24px;">
+            <li>Personal Loans</li>
+            <li>Mortgage Loans</li>
+            <li>Business Loans</li>
+            <li>Auto Loans</li>
+            <li>Refinancing Options</li>
+          </ul> 
         </div>
+      </div>
+      <div class="row mb-5">
+        <div class="col-lg-6">
+          <h1 class="text-success fw-medium">Why Choose MAC Lending?</h1>
+          <br>
+          <ul class="fw-medium" style="font-size: 24px;">
+            <li>Expertise and Experience</li>
+            <li>Personalized Approach</li>
+            <li>Competitive Rates and Terms</li>
+            <li>Streamlined Process</li>
+            <li>Exceptional Customer Services</li>
+          </ul> 
         </div>
+        <div class="col-lg-6">
+          <img src="image/image14.avif" width="450px" alt="lending money" class="img-fluid rounded">
+        </div>
+      </div>
+      <div class="row mb-5">
+        <div class="col-lg-6">
+          <img src="image/image15.svg" width="450px" alt="lending money" class="img-fluid rounded">
+        </div>
+        <div class="col-lg-6">
+          <h4 class="fw-medium">Experience the MAC Lending difference and let us help you navigate your financial aspirations. 
+          We are committed to your success and look forward to being your trusted lending partner!</h1>     
+          <a type="button" href="loan_application.php" class="btn-success btn-sm" role="button">Apply Now!</a>           
+        </div>
+      </div>
     </div>
   </section>
   <br>
   <br>
   
-  <div class="card-container">
-    <div class="card">
-      <img src="image/image4.png" alt="Personal Loan" class="img-fluid">
-      <h5>Personal Loan</h5>
-      <button class="btn btn-success">Apply For Loan</button>
-    </div>
-    <div class="card">
-      <img src="image/image5.png" alt="Salary Loan" class="img-fluid">
-      <h5>Salary Loan</h5>
-      <button class="btn btn-success">Apply For Loan</button>
-    </div>
-    <div class="card">
-      <img src="image/image6.png" alt="Small Business Loan" class="img-fluid">
-      <h5>Small Business Loan</h5>
-      <button class="btn btn-success">Apply For Loan</button>
-    </div>
-  </div>
+  
   <br>
   <br>
   
