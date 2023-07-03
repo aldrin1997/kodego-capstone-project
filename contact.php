@@ -25,42 +25,61 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-success" href="index.html">Home</a>
+            <a class="nav-link text-success" href="home.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
+            <a class="nav-link" href="services.php">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.php">Contact</a>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link btn btn-success" href="login.html">Login</a>
+            <a class="nav-link btn btn-success" href="login.php">Login</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="login-card">
-    <h2>Login</h2>
-    <form>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" name="password" required>
-      </div>
-      <button type="submit" class="login-button">Login</button>
-    </form>
-    <p class="register-link">Don't have an account? <a href="register.html">Register</a></p>
-  </div>
+  
+  <main class="container boxed">
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-sm-8 p-5">
+            <h1 class="fw-bold display-4"><span class="brand_underline">Contact</span> Us</h1>
+            <small>Contact us any time. Our Agents are available 24/7 to assist you.</small>
+            <div class="container mt-2">
+                <form id="contact-form">
+                    <div class="mb-3">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" placeholder="Enter message" rows="5"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-4 p-5 bg-light">
+            <h1 class="fw-bold display-4">MAC Lending</h1>
+            <p><i class="fas fa-city"></i> 305 3/F Ayala Ave. Makati City</p>
+            <p><i class="fas fa-envelope"></i> Email: MACLending.com</p>
+            <p><i class="fas fa-phone"></i> Phone: +639260262030</p>
+        </div>
+    </div>
+</main>
+
   <br>
   <br>
 
@@ -78,16 +97,16 @@
         
         <div class="footer-column">
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="home.php">Home</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">About Us</a>
+            <a class="nav-link" href="about.php">About Us</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Privacy Policy</a>
+            <a class="nav-link" href="privacy.php">Privacy Policy</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Contact Us</a>
+            <a class="nav-link" href="contact.php">Contact Us</a>
           </div>
 
         </div>

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['username'])) {
+    header("Location: index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,41 +20,104 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<style>
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.nav-item {
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    position: relative;
+    color: #282828;
+    text-decoration: none;
+    margin: 3px;
+    z-index: 1;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    width: 80%;
+    height: 5px;
+    background-color:#8ee69c;
+    z-index: -1;
+}
+
+.brand_underline {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.brand_underline::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    margin-bottom: 8px;
+    background-color: #02F89C;
+    z-index: -1;
+}
+nav li.user-icon {
+    padding: 10px;
+    background-color: #333;
+}
+
+nav li.user-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+</style>
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <div class="navbar-brand">
-        <img src="image/logo.png" width="400px" class="logo-image" alt="Logo">
-        <span class="logo-text">MAC Lending Inc.</span>
-      </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link text-success" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link btn btn-success" href="login.html">Login</a>
-          </li>
-        </ul>
-      </div>
+        <img src="image/logo.png" width="150px" class="navbar-brand p-2" href="index.html">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">MAC LENDING INC.</span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="home.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.php">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.php">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.php">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="loan_application.php">Apply for a Loan</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-3" href="profile.php">Profile</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
 
   <section class="hero-section">
     <div class="container">
@@ -139,13 +212,13 @@
         
         <div class="footer-column">
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="home.php">Home</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">About Us</a>
+            <a class="nav-link" href="about.php">About Us</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Privacy Policy</a>
+            <a class="nav-link" href="privacy.php">Privacy Policy</a>
           </div>
           <div class="footer-links">
             <a class="nav-link" href="index.html">Contact Us</a>

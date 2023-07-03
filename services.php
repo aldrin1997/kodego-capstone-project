@@ -25,44 +25,67 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-success" href="index.html">Home</a>
+            <a class="nav-link text-success" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
+            <a class="nav-link" href="services.php">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.php">Contact</a>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link btn btn-success" href="login.html">Login</a>
+            <a class="nav-link btn btn-success" href="login.php">Login</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="login-card">
-    <h2>Login</h2>
-    <form>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" name="password" required>
-      </div>
-      <button type="submit" class="login-button">Login</button>
-    </form>
-    <p class="register-link">Don't have an account? <a href="register.html">Register</a></p>
+  <section class="services-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h5 class="text-success">Services that we are providing</h5>
+          <h3>Building a Brighter financial</h3>
+          <h3>Future & Good Support.</h3>
+          <p>With our streamlined application process, you can apply for a loan with ease. Simply visit our website or reach out to our dedicated customer service team, and we'll guide you through the necessary steps. We have simplified the documentation requirements to expedite the approval process, allowing you to receive the funds you need quickly.</p>
+          <button class="btn btn-success btn-lg mt-4">Apply for Loan</button>
+        </div>
+        <div class="col-lg-6">
+          <img src="image/image3.png" alt="lending money" class="img-fluid">
+        </div>
+        </div>
+    </div>
+  </section>
+  <br>
+  <br>
+  
+  <div class="card-container">
+    <div class="card">
+      <img src="image/image4.png" alt="Personal Loan" class="img-fluid">
+      <h5>Personal Loan</h5>
+      <button class="btn btn-success">Apply For Loan</button>
+    </div>
+    <div class="card">
+      <img src="image/image5.png" alt="Salary Loan" class="img-fluid">
+      <h5>Salary Loan</h5>
+      <button class="btn btn-success">Apply For Loan</button>
+    </div>
+    <div class="card">
+      <img src="image/image6.png" alt="Small Business Loan" class="img-fluid">
+      <h5>Small Business Loan</h5>
+      <button class="btn btn-success">Apply For Loan</button>
+    </div>
   </div>
   <br>
   <br>
+  
+  
 
 <footer class="footer">
   <div class="container">
@@ -78,16 +101,16 @@
         
         <div class="footer-column">
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.php">Home</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">About Us</a>
+            <a class="nav-link" href="about.php">About Us</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Privacy Policy</a>
+            <a class="nav-link" href="privacy.php">Privacy Policy</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Contact Us</a>
+            <a class="nav-link" href="contact.php">Contact Us</a>
           </div>
 
         </div>

@@ -1,3 +1,43 @@
+<?php
+session_start();
+require_once 'dbconfig.php';
+
+// Check if user is already logged in
+if (isset($_SESSION['username'])) {
+    header("Location: home.php");
+    exit();
+}
+
+// Check if form is submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Validate the submitted form data
+    $username = $_POST['user_name'];
+    $password = $_POST['password'];
+
+    try {
+        // Retrieve user data from the database
+        $stmt = $db->prepare("SELECT * FROM users WHERE username = :username");
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && password_verify($password, $user['password'])) {
+            // Login successful, store the username in session
+            $_SESSION['username'] = $username;
+            header("Location: home.php");
+            exit();
+        } else {
+            // Login failed, redirect to login page with error message
+            header("Location: index.php?error=1");
+            exit();
+        }
+    } catch (PDOException $e) {
+        die("Login failed: " . $e->getMessage());
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,46 +65,56 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-success" href="index.html">Home</a>
+            <a class="nav-link text-success" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
+            <a class="nav-link" href="services.php">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.php">Contact</a>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link btn btn-success" href="login.html">Login</a>
+            <a class="nav-link btn btn-success" href="login.html">Admin</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="login-card">
-    <h2>Login</h2>
-    <form>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" name="password" required>
-      </div>
-      <button type="submit" class="login-button">Login</button>
-    </form>
-    <p class="register-link">Don't have an account? <a href="register.html">Register</a></p>
-  </div>
-  <br>
-  <br>
+    
+    <div class="login-card">
+        <h2>Login</h2>
 
-<footer class="footer">
+        <?php if (isset($error)): ?>
+            <span class="error-msg"><?php echo $error; ?></span>
+        <?php endif; ?>
+
+        <form action="" method="POST">
+            <div class="form-group">
+                <label>Username:</label>
+                <input type="username" name="user_name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" name="password" required>
+            </div>
+
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <br>
+        <p class="login-link" style="text-align: center;">Don't have an account? <a href="register.php" style="text-decoration: none; color: inherit;">Register</a></p>
+
+
+    </div>
+    <br>
+    <br>
+    <footer class="footer">
   <div class="container">
     <div class="footer-row">
       <div class="footer-logo">
@@ -78,16 +128,16 @@
         
         <div class="footer-column">
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.php">Home</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">About Us</a>
+            <a class="nav-link" href="about.php">About Us</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Privacy Policy</a>
+            <a class="nav-link" href="privacy.php">Privacy Policy</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Contact Us</a>
+            <a class="nav-link" href="contact.php">Contact Us</a>
           </div>
 
         </div>
@@ -128,7 +178,9 @@
     </div>
   </div>
 </footer>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+  </script>
 </body>
 </html>
