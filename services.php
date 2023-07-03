@@ -97,7 +97,7 @@
         <div class="col-lg-6">
           <h4 class="fw-medium">Experience the MAC Lending difference and let us help you navigate your financial aspirations. 
           We are committed to your success and look forward to being your trusted lending partner!</h1>     
-          <a type="button" href="loan_application.php" class="btn-success btn-sm" role="button">Apply Now!</a>           
+          <a type="button" href="login.php" class="btn-success btn-sm" role="button">Apply Now!</a>           
         </div>
       </div>
     </div>
