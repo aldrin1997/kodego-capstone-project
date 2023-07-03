@@ -26,7 +26,7 @@ if (isset($_SESSION['username'])) {
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <div class="navbar-brand">
-        <img src="image/logo.png" width="400px" class="logo-image" alt="Logo">
+        <img src="image/logo.png" width="300px" class="logo-image" alt="Logo">
         <span class="logo-text d-flex font-size-responsive">MAC Lending Inc.</span>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
