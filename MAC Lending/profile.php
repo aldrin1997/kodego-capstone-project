@@ -1,3 +1,33 @@
+<?php
+// profile.php
+
+// Start the session (assuming you have session management in place)
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    // Redirect the user to the login page or display an error message
+    header('Location: login.php');
+    exit;
+}
+
+// Connect to the database
+$pdo = new PDO('mysql:host=localhost;dbname=loan_db', 'root', '');
+
+// Prepare the query
+$query = $pdo->prepare('SELECT * FROM users WHERE username = :username');
+
+// Bind the parameter
+$query->bindParam(':username', $_SESSION['username']);
+
+// Execute the query
+$query->execute();
+
+// Fetch the user record
+$user = $query->fetch(PDO::FETCH_ASSOC);
+
+// Display the user profile information
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,13 +93,23 @@
     background-color: #02F89C;
     z-index: -1;
 }
+nav li.user-icon {
+    padding: 10px;
+    background-color: #333;
+}
+
+nav li.user-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
 </style>
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <img src="images/MAC LENDING.png" width="150px" class="navbar-brand p-2" href="index.html">
+        <img src="image/logo.png" width="150px" class="navbar-brand p-2" href="index.html">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">MAC LENDING INC.</span>
@@ -77,10 +117,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">About</a>
+                    <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Services</a>
@@ -89,96 +129,20 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="login.html">Apply for a Loan</a>
+                  <a class="nav-link" href="loan_application.php">Apply for a Loan</a>
               </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-3" href="login.html">Login</a>
+                    <a class="nav-link mr-3  active" href="#">Profile</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-
-  <section class="hero-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <h5 class="text-success">Achieve your financial goal</h5>
-          <h1>Small Business</h1>
-          <h1>Loan for daily</h1>
-          <h1>Expenses.</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti maiores eius temporibus asperiores autem est fugit quaerat debitis voluptatem ratione, eaque ex ut quas quod? Aliquam id sunt non.</p>
-          <button class="btn btn-success btn-lg mt-4">Apply for Loan</button>
-        </div>
-        <div class="col-lg-6">
-          <img src="image/image1.png" alt="lending money" class="img-fluid">
-        </div>
-      </div>
-    </div>
-  </section>
-<br>
-<br>
-
-<section class="about-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <h5 class="text-success">About Our Company</h5>
-        <h3>Building a Brighter financial</h3>
-        <h3>Future & Good Support.</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti maiores eius temporibus asperiores autem est fugit quaerat debitis voluptatem ratione, eaque ex ut quas quod? Aliquam id sunt non.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti maiores eius temporibus asperiores autem est fugit quaerat debitis voluptatem ratione, eaque ex ut quas quod? Aliquam id sunt non.</p>
-        <button class="btn btn-success btn-lg mt-4">Apply for Loan</button>
-      </div>
-      <div class="col-lg-6">
-        <img src="image/image2.png" alt="lending money" class="img-fluid">
-      </div>
-    </div>
-  </div>
-</section>
-<br>
-<br>
-
-<section class="services-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <h5 class="text-success">Services that we are providing</h5>
-        <h3>Building a Brighter financial</h3>
-        <h3>Future & Good Support.</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti maiores eius temporibus asperiores autem est fugit quaerat debitis voluptatem ratione, eaque ex ut quas quod? Aliquam id sunt non.</p>
-        <button class="btn btn-success btn-lg mt-4">Apply for Loan</button>
-      </div>
-      <div class="col-lg-6">
-        <img src="image/image3.png" alt="lending money" class="img-fluid">
-      </div>
-      </div>
-  </div>
-</section>
-<br>
-<br>
-
-<div class="card-container">
-  <div class="card">
-    <img src="image/image4.png" alt="Personal Loan" class="img-fluid">
-    <h5>Personal Loan</h5>
-    <button class="btn btn-success">Apply For Loan</button>
-  </div>
-  <div class="card">
-    <img src="image/image5.png" alt="Salary Loan" class="img-fluid">
-    <h5>Salary Loan</h5>
-    <button class="btn btn-success">Apply For Loan</button>
-  </div>
-  <div class="card">
-    <img src="image/image6.png" alt="Small Business Loan" class="img-fluid">
-    <h5>Small Business Loan</h5>
-    <button class="btn btn-success">Apply For Loan</button>
-  </div>
-</div>
-<br>
-<br>
-
-<footer class="footer">
+    <h1>User Profile</h1>
+    <p>Username: <?php echo $user['username']; ?></p>
+    <p>Email: <?php echo $user['email']; ?></p>
+    <p><a href="logout.php">Logout</a></p>
+    <footer class="footer">
   <div class="container">
     <div class="footer-row">
       <div class="footer-logo">
@@ -242,7 +206,5 @@
     </div>
   </div>
 </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

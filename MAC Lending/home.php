@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['username'])) {
+    header("Location: index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,13 +73,23 @@
     background-color: #02F89C;
     z-index: -1;
 }
+nav li.user-icon {
+    padding: 10px;
+    background-color: #333;
+}
+
+nav li.user-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
 </style>
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <img src="images/MAC LENDING.png" width="150px" class="navbar-brand p-2" href="index.html">
+        <img src="image/logo.png" width="150px" class="navbar-brand p-2" href="index.html">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">MAC LENDING INC.</span>
@@ -77,10 +97,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link active" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">About</a>
+                    <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Services</a>
@@ -89,10 +109,10 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="login.html">Apply for a Loan</a>
+                  <a class="nav-link" href="loan_application.php">Apply for a Loan</a>
               </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-3" href="login.html">Login</a>
+                    <a class="nav-link mr-3" href="profile.php">Profile</a>
                 </li>
             </ul>
         </div>

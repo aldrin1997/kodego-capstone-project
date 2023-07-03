@@ -1,0 +1,254 @@
+.login-button {
+    background-color: green !important;
+    color: white !important;
+  }
+  .login-button:hover {
+    background-color: green !important;
+    color: white !important;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  .navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .navbar-nav li {
+    margin-right: 10px;
+  }
+  
+  .navbar-nav li:last-child {
+    margin-right: 0;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-image {
+    margin-right: 10px;
+  }
+  
+  .logo-text {
+    font-weight: bold;
+  }
+
+  .logo-text {
+    font-weight: bold;
+    color: #28a745;
+    font-size: 2.1em;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card {
+    flex-basis: 30%;
+    padding: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+    width: 20px;
+  }
+  
+  .card img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+  }
+  
+  .card h5 {
+    margin-top: 10px;
+  }
+
+  .footer {
+    background-color: #f1f1f1;
+    padding: 20px 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-row {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-logo img {
+    max-height: 350px;
+  }
+  
+  .footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    flex-basis: 25%;
+    padding: 0 10px;
+  }
+  
+  .footer-column h5 {
+    font-weight: bold;
+  }
+  
+  .footer-column p {
+    margin-bottom: 100px;
+  }
+  
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-links {
+    
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-logo {
+    margin-top: -6em;
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  
+  .social-icons i {
+    margin-right: 5px;
+    font-size: 24px;
+  }
+  
+  .social-icons span {
+    font-size: 20px;
+    color: black;
+  }
+
+  body {
+    background-color: #f8f9fa;
+  }
+  
+  .login-card {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #28a745;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+  }
+  
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .register-link a {
+    color: black;
+    text-decoration: none;
+  }
+
+  body {
+    background-color: #f8f9fa;
+  }
+  
+  .registration-card {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #28a745; /* Border color of success */
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+  }
+  
+  .register-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+    cursor: pointer;
+  }
+
+  .login-link a {
+    color: black;
+    text-decoration: none;
+  }
