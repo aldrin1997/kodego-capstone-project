@@ -26,8 +26,8 @@
     <div class="container">
       <div class="navbar-brand">
         <img src="image/logo.png" width="300px" class="logo-image" alt="Logo">
-        <span class="logo-text">MAC Lending Inc.</span>
       </div>
+      <span class="logo-text">MAC Lending Inc.</span>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

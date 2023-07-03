@@ -130,88 +130,122 @@ if(isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-  <title>MAC Lending</title>
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <title>MAC Lending</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<style>
-  .navbar-nav {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem;
-}
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+        }
 
-.nav-item {
-    margin-bottom: 10px;
-}
+        .nav-item {
+            margin-bottom: 10px;
+        }
 
-.nav-link {
-    position: relative;
-    color: #282828;
-    text-decoration: none;
-    margin: 3px;
-    z-index: 1;
-}
+        .nav-link {
+            position: relative;
+            color: #282828;
+            text-decoration: none;
+            margin: 3px;
+            z-index: 1;
+        }
 
-.centered-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .centered-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.nav-link.active::after {
-    content: "";
-    position: absolute;
-    bottom: 10px;
-    left: 10%;
-    width: 80%;
-    height: 5px;
-    background-color:#8ee69c;
-    z-index: -1;
-}
+        .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: 10px;
+            left: 10%;
+            width: 80%;
+            height: 5px;
+            background-color:#8ee69c;
+            z-index: -1;
+        }
 
-.brand_underline {
-    position: relative;
-    display: inline-block;
-    z-index: 1;
-}
+        .brand_underline {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
 
 
-.brand_underline::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 15px;
-    margin-bottom: 8px;
-    background-color: #02F89C;
-    z-index: -1;
-}
-nav li.user-icon {
-    padding: 10px;
-    background-color: #333;
-}
+        .brand_underline::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            margin-bottom: 8px;
+            background-color: #02F89C;
+            z-index: -1;
+        }
+        nav li.user-icon {
+            padding: 10px;
+            background-color: #333;
+        }
 
-nav li.user-icon img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-</style>
+        nav li.user-icon img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .navbar-nav {
+            display: flex;
+            justify-content: flex-end;
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .navbar-nav li {
+            margin-right: 10px;
+        }
+        
+        .navbar-nav li:last-child {
+            margin-right: 0;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-image {
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-weight: bold;
+        }
+
+        .logo-text {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 2.1em;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <img src="image/logo.png" width="150px" class="navbar-brand p-2" href="index.html">
+        <img src="image/logo.png" width="300px" class="navbar-brand p-2" href="index.html">
+        <span class="logo-text">MAC Lending Inc.</span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">MAC LENDING INC.</span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav ml-auto">
