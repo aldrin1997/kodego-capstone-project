@@ -207,22 +207,22 @@ $user = $query->fetch(PDO::FETCH_ASSOC);
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="home.php">Home</a>
+                        <a class="nav-link fw-medium" href="home.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link fw-medium" href="about.php">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                        <a class="nav-link fw-medium" href="services.php">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link fw-medium" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="loan_application.php">Apply for a Loan</a>
+                        <a class="nav-link fw-medium" href="loan_application.php">Apply for a Loan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-3  active" href="#">Profile</a>
+                        <a class="nav-link mr-3 fw-bold text-success" href="profile.php">Profile</a>
                     </li>
                 </ul>
             </div>

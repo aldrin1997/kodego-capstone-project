@@ -91,6 +91,7 @@ nav li.user-icon img {
     <div class="container">
         <img src="image/logo.png" width="300px" class="navbar-brand p-2" href="index.html">
         <span class="logo-text">MAC Lending Inc.</span>
+        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -98,22 +99,22 @@ nav li.user-icon img {
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="home.php">Home</a>
+                    <a class="nav-link fw-bold text-success" href="home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.php">About</a>
+                    <a class="nav-link fw-medium" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="services.php">Services</a>
+                    <a class="nav-link fw-medium" href="services.php">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contact</a>
+                    <a class="nav-link fw-medium" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="loan_application.php">Apply for a Loan</a>
+                  <a class="nav-link fw-medium" href="loan_application.php">Apply for a Loan</a>
               </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-3" href="profile.php">Profile</a>
+                    <a class="nav-link mr-3 fw-medium" href="profile.php">Profile</a>
                 </li>
             </ul>
         </div>
