@@ -65,21 +65,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link text-success" href="index.php">Home</a>
+            <a class="nav-link fw-medium" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.php">About</a>
+            <a class="nav-link fw-medium" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="services.php">Services</a>
+            <a class="nav-link fw-medium" href="services.php">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact</a>
+            <a class="nav-link fw-medium" href="contact.php">Contact</a>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link btn btn-success" href="login.html">Admin</a>
+            <a class="nav-link fw-medium btn btn-success" href="login.html">Admin</a>
           </li>
         </ul>
       </div>
