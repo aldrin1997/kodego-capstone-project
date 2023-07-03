@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if user is already logged in
+if (isset($_SESSION['username'])) {
+    header("Location: home.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,41 +20,94 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<style>
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.nav-item {
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    position: relative;
+    color: #282828;
+    text-decoration: none;
+    margin: 3px;
+    z-index: 1;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    width: 80%;
+    height: 5px;
+    background-color:#8ee69c;
+    z-index: -1;
+}
+
+.brand_underline {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.brand_underline::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    margin-bottom: 8px;
+    background-color: #02F89C;
+    z-index: -1;
+}
+</style>
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <div class="navbar-brand">
-        <img src="image/logo.png" width="400px" class="logo-image" alt="Logo">
-        <span class="logo-text">MAC Lending Inc.</span>
-      </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link text-success" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link btn btn-success" href="login.html">Login</a>
-          </li>
-        </ul>
-      </div>
+        <img src="image/logo.png" width="150px" class="navbar-brand p-2" href="index.html">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">MAC LENDING INC.</span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.php">Apply for a Loan</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-3" href="login.php">Login</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
 
   <section class="hero-section">
     <div class="container">
@@ -55,7 +118,8 @@
           <h1>Loan for daily</h1>
           <h1>Expenses.</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti maiores eius temporibus asperiores autem est fugit quaerat debitis voluptatem ratione, eaque ex ut quas quod? Aliquam id sunt non.</p>
-          <button class="btn btn-success btn-lg mt-4">Apply for Loan</button>
+          <button class="btn btn-success btn-lg mt-4" onclick="window.location.href = 'login.php';">Apply for Loan</button>
+
         </div>
         <div class="col-lg-6">
           <img src="image/image1.png" alt="lending money" class="img-fluid">
@@ -75,7 +139,8 @@
         <h3>Future & Good Support.</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti maiores eius temporibus asperiores autem est fugit quaerat debitis voluptatem ratione, eaque ex ut quas quod? Aliquam id sunt non.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti maiores eius temporibus asperiores autem est fugit quaerat debitis voluptatem ratione, eaque ex ut quas quod? Aliquam id sunt non.</p>
-        <button class="btn btn-success btn-lg mt-4">Apply for Loan</button>
+        <button class="btn btn-success btn-lg mt-4" onclick="window.location.href = 'login.php';">Apply for Loan</button>
+
       </div>
       <div class="col-lg-6">
         <img src="image/image2.png" alt="lending money" class="img-fluid">
@@ -94,7 +159,8 @@
         <h3>Building a Brighter financial</h3>
         <h3>Future & Good Support.</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corrupti maiores eius temporibus asperiores autem est fugit quaerat debitis voluptatem ratione, eaque ex ut quas quod? Aliquam id sunt non.</p>
-        <button class="btn btn-success btn-lg mt-4">Apply for Loan</button>
+        <button class="btn btn-success btn-lg mt-4" onclick="window.location.href = 'login.php';">Apply for Loan</button>
+
       </div>
       <div class="col-lg-6">
         <img src="image/image3.png" alt="lending money" class="img-fluid">
@@ -109,17 +175,20 @@
   <div class="card">
     <img src="image/image4.png" alt="Personal Loan" class="img-fluid">
     <h5>Personal Loan</h5>
-    <button class="btn btn-success">Apply For Loan</button>
+    <button class="btn btn-success btn-lg mt-4" onclick="window.location.href = 'login.php';">Apply for Loan</button>
+
   </div>
   <div class="card">
     <img src="image/image5.png" alt="Salary Loan" class="img-fluid">
     <h5>Salary Loan</h5>
-    <button class="btn btn-success">Apply For Loan</button>
+    <button class="btn btn-success btn-lg mt-4" onclick="window.location.href = 'login.php';">Apply for Loan</button>
+
   </div>
   <div class="card">
     <img src="image/image6.png" alt="Small Business Loan" class="img-fluid">
     <h5>Small Business Loan</h5>
-    <button class="btn btn-success">Apply For Loan</button>
+    <button class="btn btn-success btn-lg mt-4" onclick="window.location.href = 'login.php';">Apply for Loan</button>
+
   </div>
 </div>
 <br>
@@ -193,3 +262,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
