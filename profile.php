@@ -142,8 +142,9 @@ nav li.user-icon img {
     <p>Username: <?php echo $user['username']; ?></p>
     <p>Email: <?php echo $user['email']; ?></p>
     <p><a href="logout.php">Logout</a></p>
+    <br>
     <footer class="footer">
-  <div class="container">
+    <div class="container">
     <div class="footer-row">
       <div class="footer-logo">
         <img src="image/logo.png" alt="Logo" class="img-fluid">
@@ -171,13 +172,13 @@ nav li.user-icon img {
         </div>
         <div class="footer-column">
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Personal Loan</a>
+            <a class="nav-link" href="personal.php">Personal Loan</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Salary Loan</a>
+            <a class="nav-link" href="salary.php">Salary Loan</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Small Business Loan</a>
+            <a class="nav-link" href="business.php">Small Business Loan</a>
           </div>
         </div>
         

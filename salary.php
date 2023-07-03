@@ -117,7 +117,7 @@ nav li.user-icon img {
     <div class="content container">
         <div class="row">
             <div class="text-center">
-                <h1 class="fw-bold">Application Form</h1>
+                <h1 class="fw-bold">Salary Loan Application Form</h1>
             </div>
             <hr>
             <form id="loanForm" action="submit.php" method="POST">

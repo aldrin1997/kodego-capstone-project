@@ -143,13 +143,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="footer-column">
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Personal Loan</a>
+            <a class="nav-link" href="personal.php">Personal Loan</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Salary Loan</a>
+            <a class="nav-link" href="salary.php">Salary Loan</a>
           </div>
           <div class="footer-links">
-            <a class="nav-link" href="index.html">Small Business Loan</a>
+            <a class="nav-link" href="business.php">Small Business Loan</a>
           </div>
         </div>
         
