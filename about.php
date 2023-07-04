@@ -94,20 +94,28 @@
 
   <section class="about-section">
     <div class="container">
-      <div class="row">
+      <div class="row mb-5">
         <div class="col-lg-6">
           <h1 class="text-success fw-bold text-center">Mission</h1>
-          <h4 class="text-center">Building a Brighter financial</h4>
-          <h4 class="text-center">Future & Good Support.</h4>
-          <p class="fw-medium">Our mission is to be the trusted partner for individuals and businesses seeking financial assistance. We aim to simplify the 
+          <p class="fw-medium text-center">Our mission is to be the trusted partner for individuals and businesses seeking financial assistance. We aim to simplify the 
             lending process, offering a wide range of loan options and personalized solutions tailored to our customers' unique needs. We 
-            are dedicated to fostering financial well-being and helping our clients make informed decisions about their borrowing needs.</p>
-          
-          
+            are dedicated to fostering financial well-being and helping our clients make informed decisions about their borrowing needs.</p>                   
         </div>
         <div class="col-lg-6">
           <img src="image/image11.jpg" alt="lending money" class="img-fluid rounded">
         </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="image/image16.png" alt="lending money" class="img-fluid rounded">
+        </div>
+        <div class="col-lg-6">
+          <h1 class="text-success fw-bold text-center">Vission</h1>          
+          <p class="fw-medium text-center">At MAC Lending, our vision is to provide fast approved loans for all types of individuals
+             who are in need of quick financial assistance. We understand that sometimes life throws unexpected 
+             challenges our way, and having access to immediate funds can make a significant difference.</p>                  
+        </div>       
       </div>
     </div>
     

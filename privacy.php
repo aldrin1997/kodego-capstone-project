@@ -49,7 +49,7 @@
   <div class="container p-5">
     <h1>Privacy Policy</h1>
     <p class="mt-5"><b>Effective Date: July 04, 2023</b></p>
-    <p>Thank you for using Staybnb ("we," "us," or "our") property booking website. This Privacy Policy outlines how
+    <p>Thank you for using MAC Lending ("we," "us," or "our") lending website. This Privacy Policy outlines how
         we collect, use, disclose, and protect your personal information when you access and use our services. We
         are committed to respecting your privacy and ensuring the security of your personal data. Please read this
         Privacy Policy carefully to understand our practices regarding your information.
