@@ -1,6 +1,4 @@
 <?php
-// profile.php
-
 // Start the session (assuming you have session management in place)
 session_start();
 
@@ -26,8 +24,52 @@ $query->execute();
 // Fetch the user record
 $user = $query->fetch(PDO::FETCH_ASSOC);
 
-// Display the user profile information
+// Update user profile photo if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Check if a file is uploaded
+    if (isset($_FILES['profile_photo']) && $_FILES['profile_photo']['error'] === 0) {
+        $targetDir = 'uploads/';
+        $targetFile = $targetDir . basename($_FILES['profile_photo']['name']);
+        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+
+        // Check if the file is an actual image
+        $check = getimagesize($_FILES['profile_photo']['tmp_name']);
+        if ($check !== false) {
+            // Move the uploaded file to the target directory
+            if (move_uploaded_file($_FILES['profile_photo']['tmp_name'], $targetFile)) {
+                // Update the profile photo path in the database
+                $updateQuery = $pdo->prepare('UPDATE users SET profile_photo = :profile_photo WHERE username = :username');
+                $updateQuery->bindParam(':profile_photo', $targetFile);
+                $updateQuery->bindParam(':username', $_SESSION['username']);
+                $updateQuery->execute();
+
+                // Redirect to the profile page to see the updated photo
+                header('Location: profile.php');
+                exit;
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        } else {
+            echo "Please upload a valid image file.";
+        }
+    }
+}
+
+// Fetch the loan history from the loan_application table
+$loanQuery = $pdo->prepare('SELECT * FROM loan_application WHERE user_id = :user_id');
+$loanQuery->bindParam(':user_id', $user['id']);
+$loanQuery->execute();
+$loanHistory = $loanQuery->fetchAll(PDO::FETCH_ASSOC);
+
+// Define an array to map the loan status ID to its respective text
+$loanStatusText = array(
+    1 => "Pending",
+    2 => "Approved",
+    3 => "Rejected"
+);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,6 +199,12 @@ $user = $query->fetch(PDO::FETCH_ASSOC);
             animation-name: zoom;
             animation-duration: 0.6s;
         }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
 
         @-webkit-keyframes zoom {
             from {-webkit-transform:scale(0)} 
@@ -198,31 +246,30 @@ $user = $query->fetch(PDO::FETCH_ASSOC);
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <img src="image/logo.png" width="300px" class="navbar-brand p-2" href="index.html">
-            <span class="logo-text">MAC Lending Inc.</span>
+            <img src="image/logo.png" width="150px" class="navbar-brand p-2" href="index.html">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">MAC LENDING INC.</span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link fw-medium" href="home.php">Home</a>
+                        <a class="nav-link" href="home.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-medium" href="about.php">About</a>
+                        <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-medium" href="services.php">Services</a>
+                        <a class="nav-link" href="#">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-medium" href="contact.php">Contact</a>
+                        <a class="nav-link" href="#">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-medium" href="loan_application.php">Apply for a Loan</a>
+                        <a class="nav-link" href="loan_application.php">Apply for a Loan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-3 fw-bold text-success" href="profile.php">Profile</a>
+                        <a class="nav-link mr-3  active" href="#">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -232,17 +279,49 @@ $user = $query->fetch(PDO::FETCH_ASSOC);
     <div class="main container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <img id="myImg" class="m-2" src="image/image7.png" alt="Profile" style="width:100%;max-width:150px">
-                <div id="myModal" class="modal">
-                    <span class="close">&times;</span>
-                    <img class="modal-content" id="img01">
-                    <div id="caption">Profile</div>
-                </div>
-                <h2>User Profile</h2>
-                <p class="fw-medium">Username: <?php echo $user['username']; ?></p>
-                <p class="fw-medium">Email: <?php echo $user['email']; ?></p>
-                <p class="fw-medium"><a href="logout.php">Logout</a></p>
-            </div>
+            <form method="POST" action="profile.php" enctype="multipart/form-data">
+            <h2>Profile</h2>
+            <?php if ($user['profile_photo']): ?>
+              <img src="<?php echo $user['profile_photo']; ?>" alt="Profile Photo" class="profile-photo">
+    <?php else: ?>
+        <p>No profile photo found.</p>
+    <?php endif; ?>
+    <br>
+
+                
+                <p><strong>Username:</strong> <?php echo $user['username']; ?></p>
+<p><strong>Email:</strong> <?php echo $user['email']; ?></p>
+
+    
+
+        <div class="mb-3">
+            <label for="first_name" class="form-label">First Name:</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" value="<?php echo $user['first_name'] ?>">
+        </div>
+        <div class="mb-3">
+            <label for="surname" class="form-label">Surname:</label>
+            <input type="text" class="form-control" id="surname" name="surname" value="<?php echo $user['surname'] ?>">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address:</label>
+            <input type="text" class="form-control" id="address" name="address" value="<?php echo $user['address'] ?>">
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Age:</label>
+            <input type="number" class="form-control" id="age" name="age" value="<?php echo $user['age'] ?>">
+        </div>
+        <div class="mb-3">
+            <label for="birthday" class="form-label">Birthday:</label>
+            <input type="date" class="form-control" id="birthday" name="birthday" value="<?php echo $user['birthday'] ?>">
+        </div>
+        <div class="mb-3">
+            <label for="profile_photo" class="form-label">Profile Photo:</label>
+            <input type="file" class="form-control" id="profile_photo" name="profile_photo">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+    <br>
             <div class="card-container mb-3">
                 <div class="card">
                     <img src="image/image8.jpg" alt="Loan History" class="img-fluid">
@@ -260,7 +339,7 @@ $user = $query->fetch(PDO::FETCH_ASSOC);
                     <button class="btn btn-success btn-sm">Pay Loan</button>
                 </div>
             </div>
-            
+            <a href="logout.php">Logout</a>
         </div>
     </div>
 
@@ -271,62 +350,62 @@ $user = $query->fetch(PDO::FETCH_ASSOC);
                     <img src="image/logo.png" alt="Logo" class="img-fluid">
                 </div>
                 <div class="footer-columns">
-                    <div class="footer-column fw-medium">
-                    <h5>MAC Lending Inc.</h5>
-                    <p>Unit 305 3/F 6276<br>National Life Insurance Bldg.<br>San Lorenzo, Ayala Ave. Makati City</p>
+                    <div class="footer-column">
+                        <h5>MAC Lending Inc.</h5>
+                        <p>Unit 305 3/F 6276 National Life Insurance Bldg. San Lorenzo, Ayala Ave. Makati City</p>
                     </div>
                     
                     <div class="footer-column">
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="index.php">Home</a>
-                    </div>
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="about.php">About Us</a>
-                    </div>
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="privacy.php">Privacy Policy</a>
-                    </div>
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="contact.php">Contact Us</a>
-                    </div>
-
+                        <div class="footer-links">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </div>
+                        <div class="footer-links">
+                            <a class="nav-link" href="index.html">About Us</a>
+                        </div>
+                        <div class="footer-links">
+                            <a class="nav-link" href="index.html">Privacy Policy</a>
+                        </div>
+                        <div class="footer-links">
+                            <a class="nav-link" href="index.html">Contact Us</a>
+                        </div>
                     </div>
                     <div class="footer-column">
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="personal.php">Personal Loan</a>
-                    </div>
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="salary.php">Salary Loan</a>
-                    </div>
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="business.php">Small Business Loan</a>
-                    </div>
+                        <div class="footer-links">
+                            <a class="nav-link" href="index.html">Personal Loan</a>
+                        </div>
+                        <div class="footer-links">
+                            <a class="nav-link" href="index.html">Salary Loan</a>
+                        </div>
+                        <div class="footer-links">
+                            <a class="nav-link" href="index.html">Small Business Loan</a>
+                        </div>
                     </div>
                     
                     <div class="footer-column">
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                        <span class="fw-medium">Facebook</span>
-                        </a>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com" target="_blank">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                        <div class="social-icons">
+                            <a href="https://www.twitter.com" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    
                     </div>
-                    <div class="social-icons">
-                        <a href="https://www.twitter.com" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                        <span class="fw-medium">Twitter</span>
-                        </a>
-                    </div>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                        <span class="fw-medium">Instagram</span>
-                        </a>
-                    </div>              
                 </div>
             </div>
         </div>
     </footer>
-    
     <script>
         var modal = document.getElementById("myModal");
         
