@@ -120,7 +120,7 @@ if(isset($_POST['submit'])) {
     // Execute the statement
     try {
         $stmt->execute();
-        echo "Loan application submitted successfully.";
+        echo '<script>alert("Loan application submitted successfully.");</script>';
     } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -130,479 +130,430 @@ if(isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <title>MAC Lending</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <title>MAC Lending</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-        .navbar-nav {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 1rem;
-        }
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<style>
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
 
-        .nav-item {
-            margin-bottom: 10px;
-        }
+.nav-item {
+    margin-bottom: 10px;
+}
 
-        .nav-link {
-            position: relative;
-            color: #282828;
-            text-decoration: none;
-            margin: 3px;
-            z-index: 1;
-        }
+.nav-link {
+    position: relative;
+    color: #282828;
+    text-decoration: none;
+    margin: 3px;
+    z-index: 1;
+}
 
-        .centered-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .nav-link.active::after {
-            content: "";
-            position: absolute;
-            bottom: 10px;
-            left: 10%;
-            width: 80%;
-            height: 5px;
-            background-color:#8ee69c;
-            z-index: -1;
-        }
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    width: 80%;
+    height: 5px;
+    background-color:#8ee69c;
+    z-index: -1;
+}
 
-        .brand_underline {
-            position: relative;
-            display: inline-block;
-            z-index: 1;
-        }
+.brand_underline {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
 
 
-        .brand_underline::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 15px;
-            margin-bottom: 8px;
-            background-color: #02F89C;
-            z-index: -1;
-        }
-        nav li.user-icon {
-            padding: 10px;
-            background-color: #333;
-        }
+.brand_underline::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    margin-bottom: 8px;
+    background-color: #02F89C;
+    z-index: -1;
+}
+nav li.user-icon {
+    padding: 10px;
+    background-color: #333;
+}
 
-        nav li.user-icon img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-        }
-        .navbar-nav {
-            display: flex;
-            justify-content: flex-end;
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .navbar-nav li {
-            margin-right: 10px;
-        }
-        
-        .navbar-nav li:last-child {
-            margin-right: 0;
-        }
-
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-image {
-            margin-right: 10px;
-        }
-        
-        .logo-text {
-            font-weight: bold;
-        }
-
-        .logo-text {
-            font-weight: bold;
-            color: #28a745;
-            font-size: 2.1em;
-        }
-    </style>
+nav li.user-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+</style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <img src="image/logo.png" width="300px" class="navbar-brand p-2" href="index.html">
-            <span class="logo-text">MAC Lending Inc.</span>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link fw-medium" href="home.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-medium" href="about.php">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-medium" href="services.php">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-medium" href="contact.php">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link fw-bold text-success" href="loan_application.php">Apply for a Loan</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <img src="image/logo.png" width="150px" class="navbar-brand p-2" href="index.html">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">MAC LENDING INC.</span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.php">Home</a>
                 </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-3 fw-medium" href="profile.php">Profile</a>
-                    </li>
-                </ul>
-            </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link  active" href="#">Apply for a Loan</a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-3" href="profile.php">Profile</a>
+                </li>
+            </ul>
         </div>
-    </nav>
-    <div class="content container">
-            <div class="row">
-                <div class="text-center">
-                    <h1 class="fw-bold">Application Form</h1>
-                </div>
+    </div>
+</nav>
+<div class="content container">
+        <div class="row">
+            <div class="text-center">
+                <h1 class="fw-bold">Application Form</h1>
+            </div>
             <hr>
-            <form method="POST" action="">
-                <!-- Personal details -->
-                <div class="col-md-12">
-                        <h3 class="fw-bold">Personal Information</h3>
-                        <div class="row g-3">
-                            <div class="col-md-4 mb-3">
-                                <label for="first_name" class="form-label fw-medium">First Name</label>
-                                <input type="text" name="first_name" placeholder="First Name" required>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="middle_name" class="form-label fw-medium">Middle Name</label>
-                                <input type="text" name="middle_name" placeholder="Middle Name" required>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="last_name" class="form-label fw-medium">Last Name</label>
-                                <input type="text" name="last_name" placeholder="Last Name" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <label for="birthdate" class="form-label fw-medium">Date of Birth</label>
-                                <input type="date" class="form-control form-control-sm" name="birth_date" required>
-                            </div>
-                            <div class="col-md-4 mb-3 fw-medium">
-                                <label for="status">Status</label>
-                                    <select class="form-select form-select-sm" name="status" required>
-                                    <option value="">Select</option>
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
-                                    <option value="divorced">Divorced</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 mb-3 fw-medium">
-                                <label for="gender" class="form-label">Gender</label>
-                                <select class="form-select form-select-sm" name="gender" required>
-                                    <option value="">Select</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                    <option value="other">Other</option>
-                                </select>
-                                
-                            </div>
-                        </div>
-                    </div>
+        <form method="POST" action="">
+    <!-- Personal details -->
+            <div class="col-md-12">
+                    <h3 class="fw-bold">Personal Information</h3>
+                    <div class="row g-3">
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                    <input type="text" name="middle_name" placeholder="Middle Name" required>
+                    <input type="text" name="last_name" placeholder="Last Name" required>
                     <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <form>
-                                    <label for="email" class="form-label fw-medium">Email</label>
-                                    <input type="text" class="form-control form-control-sm" name="email" required>
-                                </form>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="contact_number" class="form-label fw-medium">Contact No.</label>
-                                <input type="text" name="contact_number" placeholder="contact no." required>
-                            </div>
-                        
-                            <div class="col-md-4">
-                                <label for="employment" class="form-label fw-medium">Employment Status</label>
-                                <select class="form-select form-select-sm" name="employment_status" required>
-                                    <option value="">Select</option>
-                                    <option value="employed">Employed</option>
-                                    <option value="unemployed">Unemployed</option>
-                                    <option value="student">Student</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="birthdate" class="form-label fw-bold">Date of Birth</label>
+                            <input type="date" class="form-control form-control-sm" name="birth_date" required>
+                        </div>
+                        <div class="col-md-4 mb-3 fw-bold">
+                            <label for="status">Status</label>
+                                <select class="form-select form-select-sm" name="status" required>
+                                <option value="">Select</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="divorced">Divorced</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3 fw-bold">
+                            <label for="gender" class="form-label">Gender</label>
+                            <select class="form-select form-select-sm" name="gender" required>
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
                             
-                        <h3 class="fw-bold">Address</h3>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                
-                                <label for="hnum" class="form-label fw-medium">House/building No.</label>
-                                <input type="number" class="form-control form-control-sm" name="house_no" required>
-                                
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="street" class="form-label fw-medium">Street</label>
-                                <input type="text" class="form-control form-control-sm" name="street" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="city" class="form-label fw-medium">City</label>
-                                <input type="text" class="form-control form-control-sm" name="city" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="province" class="form-label fw-medium">Province</label>
-                                <input type="text" class="form-control form-control-sm" name="province" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label for="country" class="form-label fw-medium">Country</label>
-                                <input type="text" class="form-control form-control-sm" name="country" required>
-                            </div>
-                            <div class="col-md-2">
-                                <label for="region" class="form-label fw-medium">Region</label>
-                                <input type="text" class="form-control form-control-sm" name="region" required>
-                            </div>
-                            <div class="col-md-2">
-                                <label for="zipcode" class="form-label fw-medium">Zip Code</label>
-                                <input type="text" class="form-control form-control-sm" name="zip_code" required>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="col-md-12">
-                        <h3 class="fw-bold">Employment Information</h3>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label for="ename" class="form-label fw-medium">Employer's Name</label>
-                                <input type="text" class="form-control form-control-sm" name="employer_name" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="nb" class="form-label fw-medium">Nature of Business/Industry</label>
-                                <input type="text" class="form-control form-control-sm" name="nature_of_business" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="jtitle" class="form-label fw-medium">Job Title/Position</label>
-                                <input type="text" class="form-control form-control-sm" name="job_title" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="nb" class="form-label fw-medium">Length of Employment</label>
-                                <input type="text" class="form-control form-control-sm" name="length_of_employment" required>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-12">
-                        <h3 class="fw-bold">Financial Information</h3>
-                        <div class="row">
-                            <div class="col-md-2 mb-3">
-                                <label for="mincome" class="form-label fw-medium">Monthly Income</label>
-                                <input type="text" class="form-control form-control-sm" name="monthly_income" required>
-                            </div>
-                            <div class="col-md-2 mb-3">
-                                <label for="loanAmount" class="form-label fw-medium">Loan Amount</label>
-                                <input type="text" class="form-control form-control-sm" name="loan_amount" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="loanPurpose" class="form-label fw-medium">Loan Purpose</label>
-                                <input type="text" class="form-control form-control-sm" name="loan_purpose" required>
-                            </div>
-                            <div class="col-md-2 mb-3">
-                                <label for="loanTerm" class="form-label fw-medium">Loan Term <small>(in months)</small></label>
-                                <input type="number" class="form-control form-control-sm" name="loan_term" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="paymentSource" class="form-label fw-medium">Source of Repayment</label>
-                                <input type="text" class="form-control form-control-sm" name="repayment_source" required>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-12">
-                        <h5 class="fw-semibold">Existing Debts or Loans <small>(if any):</small></h5>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label for="debtType" class="form-label fw-medium">Type of Debt/Loan</label>
-                                <input type="text" class="form-control form-control-sm" name="debt_type">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="oBal" class="form-label fw-medium">Outstanding Balance</label>
-                                <input type="text" class="form-control form-control-sm" name="outstanding_balance">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="monthlyInstallment" class="form-label fw-medium">Monthly Installment</label>
-                                <input type="text" class="form-control form-control-sm" name="monthly_installment">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-12">
-                        <h3 class="fw-bold">Bank Information</h3>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label for="bankName" class="form-label fw-medium">Bank Name</label>
-                                <input type="text" class="form-control form-control-sm" name="bank_name" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="accType" class="form-label fw-medium">Account Type</label>
-                                <input type="text" class="form-control form-control-sm" name="account_type" placeholder="e.g.,Savings, Checking" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="accNum" class="form-label fw-medium">Account Number</label>
-                                <input type="text" class="form-control form-control-sm" name="account_number" required>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="bankRs" class="form-label fw-medium">Length of Bank Relationship <small>(in years)</small></label>
-                                <input type="number" class="form-control form-control-sm" name="bank_relationship_length" required>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="averageBal" class="form-label fw-meidum">Average Monthly Balance</label>
-                                <input type="text" class="form-control form-control-sm" name="average_monthly_balance" required>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="col-md-12">
-                        <h3 class="fw-bold">Additional Information</h3>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label for="info1" class="form-label fw-medium">How did you here about our lending website?</label>
-                                <select class="form-select form-select-sm" name="how_did_you_hear" required>
-                                    <option value="">Select</option>
-                                    <option value="Facebook Ads">Facebook Ads</option>
-                                    <option value="Reffered by a friend">Reffered by a friend</option>
-                                    <option value="Youtube Ads">Youtube Ads</option>
-                                    <option value="Facebook Page">Facebook Page</option>
-                                    <option value="others">Others</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="info2" class="form-label fw-medium">Have you ever declared bankruptcy or defaulted on a loan? </label>
-                                <select class="form-select form-select-sm" name="declared_bankruptcy" required>
-                                    <option value="">Select</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="info3" class="form-label fw-medium">Do you have any legal judgments against you? </label>
-                                <select class="form-select form-select-sm" name="legal_judgments" required>
-                                    <option value="">Select</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="info4" class="form-label fw-medium">Do you have any pending legal cases?</label>
-                                <select class="form-select form-select-sm" name="pending_legal_cases" required>
-                                    <option value="">Select</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="info5" class="form-label fw-medium">Are you currently involved in any debt consolidation or credit counseling program? </label>
-                                <select class="form-select form-select-sm" name="debt_consolidation" required>
-                                    <option value="">Select</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="info6" class="form-label fw-medium">Are you a co-signer or guarantor for any other person's debt?</label>
-                                <select class="form-select form-select-sm" name="cosigner_guarantor" required>
-                                    <option value="">Select</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
                         </div>
                     </div>
                 </div>
-
-                <input type="submit" name="submit" value="Submit">
-            </form>
-        <hr><hr>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-row">
-                <div class="footer-logo">
-                    <img src="image/logo.png" alt="Logo" class="img-fluid">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <form>
+                                <label for="email" class="form-label fw-bold">Email</label>
+                                <input type="text" class="form-control form-control-sm" name="email" required>
+                            </form>
+                        </div>
+                        <input type="text" name="contact_number" placeholder="contact no." required>
+                        <div class="col-md-4">
+                            <label for="employment" class="form-label">Employment Status</label>
+                            <select class="form-select form-select-sm" name="employment_status" required>
+                                <option value="">Select</option>
+                                <option value="employed">Employed</option>
+                                <option value="unemployed">Unemployed</option>
+                                <option value="student">Student</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                    <h3 class="fw-bold">Address</h3>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            
+                            <label for="hnum" class="form-label fw-bold">House/building No.</label>
+                            <input type="number" class="form-control form-control-sm" name="house_no" required>
+                            
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="street" class="form-label fw-bold">Street</label>
+                            <input type="text" class="form-control form-control-sm" name="street" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="city" class="form-label fw-bold">City</label>
+                            <input type="text" class="form-control form-control-sm" name="city" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="province" class="form-label fw-bold">Province</label>
+                            <input type="text" class="form-control form-control-sm" name="province" required>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-columns">
-                    <div class="footer-column fw-medium">
-                    <h5>MAC Lending Inc.</h5>
-                    <p>Unit 305 3/F 6276<br>National Life Insurance Bldg.<br>San Lorenzo, Ayala Ave. Makati City</p>
+                <div class="col-md-12 mb-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="country" class="form-label fw-bold">Country</label>
+                            <input type="text" class="form-control form-control-sm" name="country" required>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="region" class="form-label fw-bold">Region</label>
+                            <input type="text" class="form-control form-control-sm" name="region" required>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="zipcode" class="form-label fw-bold">Zip Code</label>
+                            <input type="text" class="form-control form-control-sm" name="zip_code" required>
+                        </div>
                     </div>
-                    
-                    <div class="footer-column">
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="index.php">Home</a>
+                </div>
+                <div class="col-md-12">
+                    <h3 class="fw-bold">Employment Information</h3>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="ename" class="form-label fw-bold">Employer's Name</label>
+                            <input type="text" class="form-control form-control-sm" name="employer_name" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="nb" class="form-label fw-bold">Nature of Business/Industry</label>
+                            <input type="text" class="form-control form-control-sm" name="nature_of_business" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="jtitle" class="form-label fw-bold">Job Title/Position</label>
+                            <input type="text" class="form-control form-control-sm" name="job_title" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="nb" class="form-label fw-bold">Length of Employment</label>
+                            <input type="text" class="form-control form-control-sm" name="length_of_employment" required>
+                        </div>
                     </div>
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="about.php">About Us</a>
+                </div>
+                <div class="col-md-12">
+                    <h3 class="fw-bold">Financial Information</h3>
+                    <div class="row">
+                        <div class="col-md-2 mb-3">
+                            <label for="mincome" class="form-label fw-bold">Monthly Income</label>
+                            <input type="text" class="form-control form-control-sm" name="monthly_income" required>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label for="loanAmount" class="form-label fw-bold">Loan Amount</label>
+                            <input type="text" class="form-control form-control-sm" name="loan_amount" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="loanPurpose" class="form-label fw-bold">Loan Purpose</label>
+                            <input type="text" class="form-control form-control-sm" name="loan_purpose" required>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label for="loanTerm" class="form-label fw-bold">Loan Term <small>(in months)</small></label>
+                            <input type="number" class="form-control form-control-sm" name="loan_term" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="paymentSource" class="form-label fw-bold">Source of Repayment</label>
+                            <input type="text" class="form-control form-control-sm" name="repayment_source" required>
+                        </div>
                     </div>
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="privacy.php">Privacy Policy</a>
+                </div>
+                <div class="col-md-12">
+                    <h5 class="fw-semibold">Existing Debts or Loans <small>(if any):</small></h5>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="debtType" class="form-label fw-bold">Type of Debt/Loan</label>
+                            <input type="text" class="form-control form-control-sm" name="debt_type">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="oBal" class="form-label fw-bold">Outstanding Balance</label>
+                            <input type="text" class="form-control form-control-sm" name="outstanding_balance">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="monthlyInstallment" class="form-label fw-bold">Monthly Installment</label>
+                            <input type="text" class="form-control form-control-sm" name="monthly_installment">
+                        </div>
                     </div>
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="contact.php">Contact Us</a>
+                </div>
+                <div class="col-md-12">
+                    <h3 class="fw-bold">Bank Information</h3>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="bankName" class="form-label fw-bold">Bank Name</label>
+                            <input type="text" class="form-control form-control-sm" name="bank_name" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="accType" class="form-label fw-bold">Account Type</label>
+                            <input type="text" class="form-control form-control-sm" name="account_type" placeholder="e.g.,Savings, Checking" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="accNum" class="form-label fw-bold">Account Number</label>
+                            <input type="text" class="form-control form-control-sm" name="account_number" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="bankRs" class="form-label fw-bold">Length of Bank Relationship <small>(in years)</small></label>
+                            <input type="number" class="form-control form-control-sm" name="bank_relationship_length" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="averageBal" class="form-label fw-bold">Average Monthly Balance</label>
+                            <input type="text" class="form-control form-control-sm" name="average_monthly_balance" required>
+                        </div>
                     </div>
+                </div>
+                <div class="col-md-12">
+                    <h3 class="fw-bold">Additional Information</h3>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="info1" class="form-label fw-bold">How did you here about our lending website?</label>
+                            <select class="form-select form-select-sm" name="how_did_you_hear" required>
+                                <option value="">Select</option>
+                                <option value="Facebook Ads">Facebook Ads</option>
+                                <option value="Reffered by a friend">Reffered by a friend</option>
+                                <option value="Youtube Ads">Youtube Ads</option>
+                                <option value="Facebook Page">Facebook Page</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="info2" class="form-label fw-bold">Have you ever declared bankruptcy or defaulted on a loan? </label>
+                            <select class="form-select form-select-sm" name="declared_bankruptcy" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="info3" class="form-label fw-bold">Do you have any legal judgments against you? </label>
+                            <select class="form-select form-select-sm" name="legal_judgments" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="info4" class="form-label fw-bold">Do you have any pending legal cases?</label>
+                            <select class="form-select form-select-sm" name="pending_legal_cases" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="info5" class="form-label fw-bold">Are you currently involved in any debt consolidation or credit counseling program? </label>
+                            <select class="form-select form-select-sm" name="debt_consolidation" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="info6" class="form-label fw-bold">Are you a co-signer or guarantor for any other person's debt?</label>
+                            <select class="form-select form-select-sm" name="cosigner_guarantor" required>
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
 
                     </div>
-                    <div class="footer-column">
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="personal.php">Personal Loan</a>
-                    </div>
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="salary.php">Salary Loan</a>
-                    </div>
-                    <div class="footer-links">
-                        <a class="nav-link fw-medium" href="business.php">Small Business Loan</a>
-                    </div>
-                    </div>
-                    
-                    <div class="footer-column">
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                        <span class="fw-medium">Facebook</span>
-                        </a>
-                    </div>
-                    <div class="social-icons">
-                        <a href="https://www.twitter.com" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                        <span class="fw-medium">Twitter</span>
-                        </a>
-                    </div>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                        <span class="fw-medium">Instagram</span>
-                        </a>
-                    </div>              
                 </div>
-            </div>
+
+    <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+</form>
+<hr><hr>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-logo">
+        <img src="image/logo.png" alt="Logo" class="img-fluid">
+      </div>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h5>MAC Lending Inc.</h5>
+          <p>Unit 305 3/F 6276 National Life Insurance Bldg. San Lorenzo, Ayala Ave. Makati City</p>
         </div>
-    </footer>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+        
+        <div class="footer-column">
+          <div class="footer-links">
+            <a class="nav-link" href="home.php">Home</a>
+          </div>
+          <div class="footer-links">
+            <a class="nav-link" href="index.html">About Us</a>
+          </div>
+          <div class="footer-links">
+            <a class="nav-link" href="index.html">Privacy Policy</a>
+          </div>
+          <div class="footer-links">
+            <a class="nav-link" href="index.html">Contact Us</a>
+          </div>
 
+        </div>
+        <div class="footer-column">
+          <div class="footer-links">
+            <a class="nav-link" href="loan_application.php">Personal Loan</a>
+          </div>
+          <div class="footer-links">
+            <a class="nav-link" href="loan_application.php">Salary Loan</a>
+          </div>
+          <div class="footer-links">
+            <a class="nav-link" href="loan_application.php">Small Business Loan</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+              <i class="fab fa-facebook"></i>
+              <span>Facebook</span>
+            </a>
+          </div>
+          <div class="social-icons">
+            <a href="https://www.twitter.com" target="_blank">
+              <i class="fab fa-twitter"></i>
+              <span>Twitter</span>
+            </a>
+          </div>
+          <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+  </script>

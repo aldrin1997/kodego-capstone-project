@@ -11,7 +11,6 @@
   /* CSS styles for better viewing */
   body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
     padding: 20px;
   }
 
@@ -44,7 +43,6 @@
   }
 
   .content {
-    background-color: #f8fcf3;
     margin-left: 200px;
 	margin-right: 100px;
     padding: 20px;
@@ -69,10 +67,6 @@
 			<img src="image/logo.png" width="200px" alt="logo" class="navbar">
 			<a href="admin.php"><i class="fa fa-tachometer"></i> Dashboard</a>
 			<a href="loanlist.php"><i class="fa fa-credit-card"></i> Loan List</a>
-			<a href="payments.php" class="fw-medium"><i class="fa fa-money-check"></i> Payments</a>
-			<a href="loanplans.php"><i class="fa-solid fa-coins"></i> Loan Plans</a>
-			<a href="loantypes.php"><i class="fa fa-chart-line"></i> Loan types</a>
-			<a href="borrowers.php"><i class="fa-solid fa-hand-holding-dollar"></i> Borrowers</a>
 			<a href="users.php"><i class="fa-solid fa-users"></i> Users</a>
 			<a href="logout.php" class="logout-btn"><i class="fa-sharp fa-solid fa-power-off"></i> Logout</a>
 		</div>
@@ -93,7 +87,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch all loan applicant data
+
 $sql = "SELECT * FROM loan_application";
 $result = $conn->query($sql);
 
@@ -198,7 +192,7 @@ if ($result->num_rows > 0) {
     echo "No loan applicants found.";
 }
 
-// Close connection
+
 $conn->close();
 ?>
   </div>

@@ -9,7 +9,7 @@ require_once 'dbconfig.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validate the submitted form data
     $username = $_POST['username'];
-    $firstName = $_POST['firstname'];
+    $firstname = $_POST['firstname'];
     $surname = $_POST['surname'];
     $address = $_POST['address'];
     $age = $_POST['age'];
@@ -32,10 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Insert user into the database
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            $stmt = $db->prepare("INSERT INTO users (username, firstname, surname, address, age, birthday, email, password) 
-                VALUES (:username, :firstName, :surname, :address, :age, :birthday, :email, :password)");
+            $stmt = $db->prepare("INSERT INTO admins (username, firstname, surname, address, age, birthday, email, password) 
+            VALUES (:username, :firstname, :surname, :address, :age, :birthday, :email, :password)");
+        
             $stmt->bindParam(':username', $username);
-            $stmt->bindParam(':firstName', $firstName);
+            $stmt->bindParam(':firstname', $firstname);
             $stmt->bindParam(':surname', $surname);
             $stmt->bindParam(':address', $address);
             $stmt->bindParam(':age', $age);
@@ -64,11 +65,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>MAC Lending</title>
   <link rel="stylesheet" href="css/register.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </head>
@@ -114,14 +115,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		}
 </style>
 <body>
-<div class="sidebar">
-<img src="image/logo.png" width="160px" class="navbar p-2">
-		<a href="admin.php"><i class="fa fa-tachometer"></i> Dashboard</a>
-		<a href="loanlist.php"><i class="fa fa-credit-card"></i> Loan List</a>
-		<a href="loanplans.php"><i class="fa-solid fa-coins"></i> Loan Plans</a>
-		<a href="#" class="active"><i class="fa-solid fa-users"></i> Users</a>
-    <a href="logout.php" class="logout-btn"><i class="fa-sharp fa-solid fa-power-off"></i> Logout</a>
-  </div>
+<nav>
+		<div class="sidebar">
+			<img src="image/logo.png" width="200px" alt="logo" class="navbar">
+			<a href="admin.php"><i class="fa fa-tachometer"></i> Dashboard</a>
+			<a href="loanlist.php"><i class="fa fa-credit-card"></i> Loan List</a>
+			<a href="users.php"><i class="fa-solid fa-users"></i> Users</a>
+			<a href="logout.php" class="logout-btn"><i class="fa-sharp fa-solid fa-power-off"></i> Logout</a>
+		</div>
+	</nav>
 
   <div class="registration-card">
     <h2>Registration</h2>
@@ -167,23 +169,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   <!-- Success Modal -->
   <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
         <h5 class="modal-title" id="successModalLabel">Congratulations!</h5>
-        </div>
-        <div class="modal-body">
-          <p>New user successfully registered.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+      </div>
+      <div class="modal-body">
+        <p>New user successfully registered.</p>
+      </div>
+      <div class="modal-footer">
+      <button class="btn btn-success btn-sm mt-4" onclick="location.href='users.php'">close</button>
       </div>
     </div>
   </div>
+</div>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
   <script>
     $(document).ready(function() {
       if (window.location.search.includes('message=Registered+Successfully')) {

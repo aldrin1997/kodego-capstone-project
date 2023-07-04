@@ -53,15 +53,12 @@
 
 
 <body>
-  <nav>
+<nav>
 		<div class="sidebar">
 			<img src="image/logo.png" width="200px" alt="logo" class="navbar">
 			<a href="admin.php"><i class="fa fa-tachometer"></i> Dashboard</a>
 			<a href="loanlist.php"><i class="fa fa-credit-card"></i> Loan List</a>
-			<a href="payments.php" class="active fw-medium"><i class="fa fa-money-check"></i> Payments</a>
 			<a href="loanplans.php"><i class="fa-solid fa-coins"></i> Loan Plans</a>
-			<a href="loantypes.php"><i class="fa fa-chart-line"></i> Loan types</a>
-			<a href="borrowers.php"><i class="fa-solid fa-hand-holding-dollar"></i> Borrowers</a>
 			<a href="users.php"><i class="fa-solid fa-users"></i> Users</a>
 			<a href="logout.php" class="logout-btn"><i class="fa-sharp fa-solid fa-power-off"></i> Logout</a>
 		</div>

@@ -339,7 +339,7 @@ $loanStatusText = array(
                     <button class="btn btn-success btn-sm">Pay Loan</button>
                 </div>
             </div>
-            <a href="logout.php">Logout</a>
+            <a href="logout.php" class="btn btn-success" >Logout</a>
         </div>
     </div>
 
